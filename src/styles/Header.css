@@ -1,0 +1,275 @@
+.header {
+  background: linear-gradient(135deg, #ff9933 0%, #f06030 50%, #d84315 100%);
+  color: white;
+  padding: 30px 20px;
+  box-shadow: 0 8px 30px rgba(240, 96, 48, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: headerShine 6s ease-in-out infinite;
+}
+
+@keyframes headerShine {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-20%, -20%);
+    opacity: 0.6;
+  }
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-section {
+  flex-shrink: 0;
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 8px rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.header-text {
+  flex: 1;
+}
+
+.candidate-name-header {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 15px 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.name-main {
+  font-size: 3.2rem;
+  margin: 0;
+  font-weight: 800;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.name-english {
+  font-size: 2rem;
+  margin: 8px 0 0 0;
+  font-weight: 600;
+  opacity: 0.95;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.election-title {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  opacity: 0.95;
+  line-height: 1.3;
+}
+
+.election-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.ward-info {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.work-period {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.period-text {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.period-text .english {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  font-weight: 600;
+  opacity: 0.95;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tagline .separator {
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 25px 15px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  /* Reduce animations on mobile for better performance */
+  .logo-section {
+    animation: none;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo:hover {
+    transform: scale(1.05);
+  }
+
+  .name-main {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  .name-english {
+    font-size: 1.5rem;
+  }
+
+  .election-title {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .election-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .ward-info {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .period-text {
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .candidate-name-header {
+    text-align: center;
+    padding: 12px 15px;
+  }
+
+  .work-period {
+    padding: 10px 15px;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .header {
+    padding: 20px 10px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .name-main {
+    font-size: 1.8rem;
+  }
+
+  .name-english {
+    font-size: 1.2rem;
+  }
+
+  .election-title {
+    font-size: 1.2rem;
+  }
+
+  .election-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .ward-info {
+    font-size: 0.9rem;
+  }
+
+  .period-text {
+    font-size: 0.85rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .candidate-name-header {
+    padding: 10px 12px;
+  }
+}

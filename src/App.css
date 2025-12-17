@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-orange: #f06030;
+  --primary-saffron: #ff9933;
+  --dark-bg: #1a1a1a;
+  --light-bg: #f5f5f5;
+  --text-dark: #333;
+  --text-light: #666;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--light-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling for mobile */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Better touch interactions */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: linear-gradient(135deg, #ff9933 0%, #f06030 50%, #d84315 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(240, 96, 48, 0.4);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.language-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.language-toggle:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.language-toggle:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(240, 96, 48, 0.6);
+}
+
+.language-toggle:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.content-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.sidebar {
+  flex: 0 0 380px;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #ff9933 #f5f5f5;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #ff9933;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #f06030;
+}
+
+.main-section {
+  flex: 1;
+  min-width: 0;
+}
+
+
+.footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: var(--white);
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff9933 0%, #f06030 50%, #d84315 100%);
+  box-shadow: 0 0 15px rgba(255, 153, 51, 0.5);
+}
+
+.footer-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-content p {
+  margin: 10px 0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.footer-content p:hover {
+  transform: translateY(-2px);
+}
+
+.footer-candidate {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff9933 0%, #f06030 50%, #d84315 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 30px rgba(255, 153, 51, 0.5);
+  animation: nameGlowFooter 3s ease-in-out infinite;
+}
+
+@keyframes nameGlowFooter {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+  }
+}
+
+.footer-main {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.footer-party {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.footer-tagline {
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff9933 0%, #f06030 50%, #d84315 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 15px;
+  letter-spacing: 1px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .content-layout {
+    gap: 30px;
+  }
+
+  .sidebar {
+    flex: 0 0 340px;
+  }
+}
+
+@media (max-width: 968px) {
+  .content-layout {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar {
+    position: static;
+    flex: none;
+    width: 100%;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .main-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .language-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    /* Larger touch target for mobile */
+    min-height: 44px;
+    box-shadow: 0 3px 10px rgba(240, 96, 48, 0.4);
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .footer {
+    padding: 25px 15px;
+    margin-top: 40px;
+  }
+
+  .footer-candidate {
+    font-size: 1.5rem;
+  }
+
+  .footer-main {
+    font-size: 0.95rem;
+  }
+
+  .footer-party {
+    font-size: 0.9rem;
+  }
+
+  .footer-tagline {
+    font-size: 1.1rem;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .language-toggle {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    top: 8px;
+    right: 8px;
+  }
+
+  .footer-candidate {
+    font-size: 1.3rem;
+  }
+
+  .footer-main,
+  .footer-party {
+    font-size: 0.85rem;
+  }
+
+  .footer-tagline {
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Performance optimization for low-end devices */
+@media (max-width: 768px) and (max-resolution: 1.5dppx) {
+  /* Reduce animation complexity on low-end mobile devices */
+  .footer-candidate,
+  .footer-tagline,
+  .language-toggle::before {
+    animation: none !important;
+  }
+}

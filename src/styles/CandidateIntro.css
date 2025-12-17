@@ -1,0 +1,370 @@
+.candidate-intro {
+  background: linear-gradient(135deg, #ff9933 0%, #f06030 50%, #d84315 100%);
+  padding: 30px 20px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(240, 96, 48, 0.3);
+}
+
+.candidate-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shine 8s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%, 100% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+}
+
+.candidate-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.candidate-image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.image-wrapper {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  width: 100%;
+  max-width: 280px;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.candidate-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 6px rgba(255, 255, 255, 0.3);
+  border: 4px solid white;
+  transition: all 0.4s ease;
+}
+
+.image-wrapper:hover .candidate-image {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.image-indicator {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.image-indicator span {
+  color: white;
+  font-size: 0.7rem;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.image-indicator span.active {
+  opacity: 1;
+  font-size: 0.85rem;
+}
+
+.candidate-info-section {
+  color: white;
+  width: 100%;
+}
+
+.candidate-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.candidate-name {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.3;
+}
+
+.candidate-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+  opacity: 0.95;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.candidate-designation {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.candidate-designation p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+.party-name {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.english {
+  font-size: 0.85rem;
+  margin: 6px 0;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.candidate-details {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.detail-item .icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.detail-text {
+  flex: 1;
+}
+
+.detail-text p {
+  font-size: 0.9rem;
+  margin: 3px 0;
+  line-height: 1.5;
+}
+
+.candidate-message {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 4px solid white;
+  backdrop-filter: blur(10px);
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.message-main {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.message-english {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.95;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .candidate-intro {
+    padding: 40px 20px;
+    border-radius: 0;
+    margin-bottom: 30px;
+  }
+
+  .candidate-container {
+    gap: 25px;
+  }
+
+  .image-wrapper {
+    max-width: 300px;
+  }
+
+  .candidate-name {
+    font-size: 2.5rem;
+  }
+
+  .candidate-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .candidate-designation p {
+    font-size: 1.05rem;
+  }
+
+  .detail-text p {
+    font-size: 1rem;
+  }
+
+  .message-main {
+    font-size: 1.05rem;
+  }
+
+  .message-english {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .candidate-intro {
+    padding: 40px 15px;
+  }
+
+  /* Disable heavy animations on mobile */
+  .image-wrapper {
+    animation: none;
+  }
+
+  .candidate-name {
+    font-size: 2rem;
+    animation: none;
+  }
+
+  .candidate-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .detail-text p,
+  .message-main,
+  .message-english {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .candidate-image {
+    max-width: 250px;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .detail-item:hover {
+    transform: none;
+  }
+
+  .candidate-message {
+    padding: 20px;
+    margin-top: 25px;
+  }
+
+  .candidate-details {
+    gap: 15px;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .candidate-intro {
+    padding: 30px 10px;
+  }
+
+  .candidate-name {
+    font-size: 1.7rem;
+  }
+
+  .candidate-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .candidate-designation p {
+    font-size: 0.95rem;
+  }
+
+  .candidate-image {
+    max-width: 220px;
+  }
+
+  .detail-item .icon {
+    font-size: 1.5rem;
+  }
+
+  .detail-text p {
+    font-size: 0.9rem;
+  }
+
+  .message-main {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .message-english {
+    font-size: 0.9rem;
+  }
+
+  .candidate-message {
+    padding: 15px;
+  }
+
+  .image-indicator {
+    bottom: 10px;
+  }
+
+  .image-indicator span {
+    font-size: 0.7rem;
+  }
+}
