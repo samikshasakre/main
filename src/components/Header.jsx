@@ -6,7 +6,7 @@ const Header = ({ language }) => {
     <header className="header">
       <div className="header-content">
         <div className="logo-section">
-          <img src="/logo.jpeg" alt="शिवसेना उद्धव बाळासाहेब ठाकरे लोगो" className="logo" />
+          <img src={`${import.meta.env.BASE_URL}logo.jpeg`} alt="शिवसेना उद्धव बाळासाहेब ठाकरे लोगो" className="logo" />
         </div>
         <div className="header-text">
           {language === 'marathi' ? (

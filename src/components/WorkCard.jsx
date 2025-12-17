@@ -12,7 +12,7 @@ const WorkCard = ({ work, language }) => {
     // Load gallery data
     const loadGalleryData = async () => {
       try {
-        const response = await fetch('/gallery-data.json');
+        const response = await fetch(`${import.meta.env.BASE_URL}gallery-data.json`);
         const data = await response.json();
         setGalleryData(data);
 

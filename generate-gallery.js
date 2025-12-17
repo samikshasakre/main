@@ -25,7 +25,7 @@ function scanGallery() {
           return ['.jpg', '.jpeg', '.png', '.gif'].includes(ext);
         });
 
-        galleryData[folder] = imageFiles.map(file => `/gallery/${folder}/${file}`);
+        galleryData[folder] = imageFiles.map(file => `gallery/${folder}/${file}`);
       }
     });
 

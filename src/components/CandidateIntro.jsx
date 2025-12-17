@@ -14,7 +14,7 @@ const CandidateIntro = ({ language }) => {
         <div className="candidate-image-section">
           <div className="image-wrapper" onClick={toggleImage}>
             <img
-              src={`/image${currentImage}.jpg`}
+              src={`${import.meta.env.BASE_URL}image${currentImage}.jpg`}
               alt="शिवसेना उमेदवार | Shiv Sena Candidate"
               className="candidate-image"
             />
