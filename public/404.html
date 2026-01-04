@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      // Store the path for React Router to handle
-      sessionStorage.setItem('redirect', location.pathname + location.search + location.hash);
-      // Redirect to index.html
-      location.replace(location.origin + location.pathname.split('/').slice(0, -1).join('/') + '/');
+      // Store the full path and redirect to base
+      var path = window.location.pathname;
+      sessionStorage.setItem('redirect', path);
+      // Redirect to the base /main/ with the path preserved
+      window.location.replace('/main/');
     </script>
   </head>
   <body>
