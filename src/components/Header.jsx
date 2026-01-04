@@ -12,8 +12,8 @@ const Header = ({ language }) => {
           {language === 'marathi' ? (
             <>
               <div className="candidate-name-header">
-                <h1 className="name-main">समिक्षा सक्रे</h1>
-                <p className="name-english">Samiksha Sakre</p>
+                <h1 className="name-main">समीक्षा दीपक सक्रे</h1>
+                <p className="name-english">Samiksha Deepak Sakre</p>
               </div>
               <h2 className="election-title">बृहन्मुंबई महानगरपालिका निवडणूक २०२६</h2>
               <p className="election-subtitle">BMC Election 2026</p>
@@ -30,8 +30,8 @@ const Header = ({ language }) => {
           ) : (
             <>
               <div className="candidate-name-header">
-                <h1 className="name-main">समिक्षा सक्रे</h1>
-                <p className="name-english">Samiksha Sakre</p>
+                <h1 className="name-main">समीक्षा दीपक सक्रे</h1>
+                <p className="name-english">Samiksha Deepak Sakre</p>
               </div>
               <h2 className="election-title">बृहन्मुंबई महानगरपालिका चुनाव २०२६</h2>
               <p className="election-subtitle">BMC Election 2026</p>

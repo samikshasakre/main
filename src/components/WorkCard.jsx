@@ -77,6 +77,12 @@ const WorkCard = ({ work, language }) => {
               {work.icon} {work.category.split('|')[0].trim()}
             </div>
 
+            {work.description && (
+              <div className="work-description">
+                <p>{language === 'marathi' ? work.description : work.hindiDescription}</p>
+              </div>
+            )}
+
             {images.length > 0 ? (
               <div className="image-gallery">
                 <div className="gallery-main">

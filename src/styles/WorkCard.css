@@ -281,6 +281,22 @@
   font-size: 0.9rem;
 }
 
+.work-description {
+  background: #fff8f0;
+  border-left: 4px solid #ff9933;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.work-description p {
+  margin: 0;
+}
+
 .modal-description {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -503,6 +519,13 @@
     line-height: 1.7;
   }
 
+  .work-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    padding: 15px;
+    margin: 15px 0;
+  }
+
   .gallery-image {
     max-height: 350px;
   }
@@ -581,6 +604,13 @@
 
   .modal-description {
     font-size: 0.95rem;
+  }
+
+  .work-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 12px;
+    margin: 12px 0;
   }
 
   .modal-note {

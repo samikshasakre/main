@@ -29,8 +29,8 @@ const CandidateIntro = ({ language }) => {
           {language === 'marathi' ? (
             <>
               <div className="candidate-header">
-                <h1 className="candidate-name">समिक्षा सक्रे</h1>
-                <h2 className="candidate-subtitle">Samiksha Sakre</h2>
+                <h1 className="candidate-name">समीक्षा दीपक सक्रे</h1>
+                <h2 className="candidate-subtitle">Samiksha Deepak Sakre</h2>
                 <div className="candidate-designation">
                   <p><strong>माजी नगरसेविका, प्रभाग १३५, मुंबई</strong></p>
                   <p className="english">Former Corporator, Ward 135, Mumbai</p>
@@ -80,8 +80,8 @@ const CandidateIntro = ({ language }) => {
           ) : (
             <>
               <div className="candidate-header">
-                <h1 className="candidate-name">समिक्षा सक्रे</h1>
-                <h2 className="candidate-subtitle">Samiksha Sakre</h2>
+                <h1 className="candidate-name">समीक्षा दीपक सक्रे</h1>
+                <h2 className="candidate-subtitle">Samiksha Deepak Sakre</h2>
                 <div className="candidate-designation">
                   <p><strong>पूर्व पार्षद, वार्ड १३५, मुंबई</strong></p>
                   <p className="english">Former Corporator, Ward 135, Mumbai</p>
