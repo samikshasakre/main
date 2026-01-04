@@ -6,10 +6,10 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/main">
+    <Router>
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/ahwal" element={<AhwalPage />} />
+        <Route path="/main" element={<MainPage />} />
+        <Route path="/main/ahwal" element={<AhwalPage />} />
       </Routes>
     </Router>
   );
